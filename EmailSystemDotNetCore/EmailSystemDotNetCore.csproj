@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 

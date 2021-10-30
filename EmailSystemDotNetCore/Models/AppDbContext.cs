@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EmailSystemDotNetCore.Models
 {
-    public class AppDbContext:IdentityDbContext
+    public class AppDbContext:IdentityDbContext<UserModel>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
