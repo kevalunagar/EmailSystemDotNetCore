@@ -5,12 +5,31 @@
     <link rel="stylesheet" href="/css/register.css" />
 }
 <div class="form">
-    <div class="card">
-        <img src="/Images/register_user.png" class="card-img-top user-image" alt="User Profile Image">
-        <div class="card-body">
-            <h5 class="card-title">
-                <marquee behavior="alternate">Register Your Self Here ! </marquee>
-            </h5>
-        </div>
+    <div class="card shadow p-3 mb-5 bg-white rounded">
+        <form method="POST">
+            <div class="card-body">
+                <h5 class="card-title">
+                    Registration
+                </h5>
+                <p class="card-text">
+                    <label for="email"><b>Email</b></label><br>
+                    <input type="text" placeholder="Enter New Email Address" name="email" required><br>
+                    <label for="fname"><b>First Name</b></label><br>
+                    <input type="text" placeholder="Enter Your First Name" name="fname" required><br>
+                    <label for="lname"><b>Last Name</b></label><br>
+                    <input type="text" placeholder="Enter Your Last Name" name="lname" required><br>
+                    <label for="password"><b>Password</b></label><br>
+                    <input type="password" placeholder="Enter New Password" name="password" required><br>
+                    <label for="confirmPassword"><b>Confirm Password</b></label><br>
+                    <input type="password" placeholder="Confirm New Password" name="password" required><br>
+                </p>
+                <div class="footer">
+                    <button class="btn" type="submit" value="register">Register</button>
+                    <br>
+                    <br>
+                    You Have An Account ? <a href="/login">Sign In</a>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

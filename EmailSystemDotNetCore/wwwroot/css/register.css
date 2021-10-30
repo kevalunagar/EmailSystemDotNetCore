@@ -1,4 +1,4 @@
-/* Google Fonts */
+/* Google Fonts  */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 * {
@@ -8,6 +8,7 @@
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    background-color: white;
 }
 
 .navbar .navbar-brand {
@@ -17,17 +18,30 @@
     letter-spacing: 3px;
 }
 
-.nav-custom{
+.nav-custom {
     background: white;
 }
 
-.custom-shadow{
-    box-shadow: 0 0.2rem 1rem rgba(0,0,0,.15)!important;
+.custom-shadow {
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,.15) !important;
 }
 
-.logo-img{
-    width: 70px;
-    height: 48px;
+.btn {
+    background-color: rgb(255, 39, 1) !important;
+    border-radius: 25px !important;
+    text-align: center;
+    width: 60%;
+    color: white !important;
+    margin: 2px auto;
+}
+
+    .btn:hover {
+        background-color: rgb(223, 35, 2) !important;
+    }
+
+.logo-img {
+    width: 50px;
+    height: 30px;
     margin-right: 15px;
 }
 
@@ -39,10 +53,10 @@
 
 .social {
     margin: 20px 10px 0px;
-} 
+}
 
 .form {
-    background-color: white;
+    background-color: rgba(231, 231, 231, 0.411);
     margin-bottom: -10px;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -52,41 +66,41 @@ label {
     margin-bottom: 10px;
 }
 
-input {
-    margin-bottom: 10px !important;
-    width: 300px;
-    padding: 10px 20px;
+input[type=text], input[type=password] {
+    margin-bottom: 15px !important;
+    width: 75%;
+    padding: 10px 2%;
 }
 
 .user-image {
-    width: 175px !important;
+    width: 150px !important;
     height: 150px;
     margin: 15px auto -5px auto;
 }
 
 .card {
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
     background-color: white;
-    margin-bottom: 10px;
+    margin: 15px auto;
+    border: groove 2px rgb(224, 34, 0);
+    margin-bottom: -15px;
 }
 
 .card-title {
     text-align: center;
     line-height: 2rem;
-    font-size: 1.5rem;
-    color: orange;
+    font-size: 2rem;
+    color: rgb(224, 34, 0);
     font-weight: 600;
+    padding: 2%;
+    margin:5%;
 }
 
 .footer {
-    margin-top: 10px;
     margin-bottom: -5px;
     text-align: center;
 }
 
-.btn-color {
-    background-color: orange !important;
+.rememberCheckBox {
+    width: 12px !important;
 }
-
