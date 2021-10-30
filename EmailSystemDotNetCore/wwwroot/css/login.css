@@ -1,0 +1,101 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar .navbar-brand {
+    color: #202124;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.nav-custom{
+    background: white;
+}
+
+.custom-shadow{
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.btn {
+    margin-left: 15px;
+}
+
+.logo-img{
+    width: 50px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+#footer {
+    text-align: center;
+    padding: 0.5% 5%;
+    background-color: white;
+}
+
+.social {
+    margin: 20px 10px 0px;
+} 
+
+.form {
+    background-color: white;
+    margin-bottom: -10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type=text],input[type=password] {
+    margin-bottom: 10px !important;
+    width: 450px;
+    padding: 10px 20px;
+}
+
+.user-image {
+    width: 150px !important;
+    height: 150px;
+    margin: 15px auto -5px auto;
+}
+
+.card {
+    width: 36%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    color: orange;
+    font-weight: 600;
+}
+
+.footer {
+    margin-top: 10px;
+    margin-bottom: -5px;
+    text-align: center;
+}
+
+.btn-color {
+    background-color: orange !important;
+    margin-left: 0px !important;
+}
+
+.rememberCheckBox{
+    width:12px !important;
+}
+
