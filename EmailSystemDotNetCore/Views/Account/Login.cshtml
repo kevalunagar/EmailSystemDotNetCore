@@ -5,14 +5,26 @@
     <link rel="stylesheet" href="/css/login.css" />
 }
 <div class="form">
-    <div class="card">
-        <img src="/Images/login_user.png" class="card-img-top user-image" alt="User Profile Image" />
-        <div class="card-body">
-            <h5 class="card-title">
-                <marquee behavior="alternate">Welcome to Login Page !</marquee>
-            </h5>
-
+    <form action="" method="POST">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+            <img src="/Images/login_user.png" class="card-img-top user-image" alt="User Profile Image" />
+            <div class="card-body">
+                <h5 class="card-title">
+                    <marquee behavior="alternate">Welcome to Login Page !</marquee>
+                </h5>
+                <p class="card-text">
+                    <label for="email"><b>Email</b></label><br>
+                    <input type="text" placeholder="Enter Email Address" name="email" required><br>
+                    <label for="password"><b>Password</b></label><br>
+                    <input type="password" placeholder="Enter Password" name="password" required><br>
+                </p>
+                <div class="footer">
+                    <button class="btn" type="submit" value="login">Login</button>
+                    <br>
+                    <br>
+                    Don't Have An Account ? <a href="#">Sign up</a>
+                </div>
+            </div>
         </div>
-
-    </div>
+    </form>
 </div>
