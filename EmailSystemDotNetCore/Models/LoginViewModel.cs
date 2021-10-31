@@ -9,7 +9,7 @@ namespace EmailSystemDotNetCore.Models
     public class LoginViewModel
     {
         [Required]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage ="Email is invalid")]
         public string Email { get; set; }
 
         [Required]

@@ -45,7 +45,7 @@ namespace EmailSystemDotNetCore.Controllers
                     else
                     return RedirectToAction("Mail", "Inbox");
                 }
-                ModelState.AddModelError(string.Empty, "EmailId or Password is invalid");
+                ModelState.AddModelError("", "EmailId or Password is invalid");
             }
             return View(loginViewModel);
         }

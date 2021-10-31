@@ -1,11 +1,12 @@
-﻿@{
+﻿@model LoginViewModel
+@{
     ViewBag.Title = "Login";
 }
 @section Styles{
     <link rel="stylesheet" href="/css/login.css" />
 }
 <div class="form">
-    <form action="" method="POST">
+    <form method="POST">
         <div class="card shadow p-3 mb-5 bg-white rounded">
             <img src="/Images/login_user.png" class="card-img-top user-image" alt="User Profile Image" />
             <div class="card-body">
@@ -13,16 +14,19 @@
                     <marquee behavior="alternate">Welcome to Login Page !</marquee>
                 </h5>
                 <p class="card-text">
-                    <label for="email"><b>Email</b></label><br>
-                    <input type="text" placeholder="Enter Email Address" name="email" required><br>
-                    <label for="password"><b>Password</b></label><br>
-                    <input type="password" placeholder="Enter Password" name="password" required><br>
+                    <div class="alert alert-danger" asp-validation-summary="All"></div>
+                    <label asp-for="Email"></label><br>
+                    <input asp-for="Email" placeholder="Enter Email Address"><br />
+                    <span asp-validation-for="Email" class="text-danger"></span><br>
+                    <label asp-for="Password"></label><br>
+                    <input asp-for="Password" placeholder="Enter Password"><br />
+                    <span asp-validation-for="Password" class="text-danger"></span><br>
                 </p>
                 <div class="footer">
-                    <button class="btn" type="submit" value="login">Login</button>
+                    <button class="btn" type="submit">Login</button>
                     <br>
                     <br>
-                    Don't Have An Account ? <a href="#">Sign up</a>
+                    Don't Have An Account ? <a asp-controller="Account" asp-action="Register">Sign up</a>
                 </div>
             </div>
         </div>
