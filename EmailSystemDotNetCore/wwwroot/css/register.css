@@ -32,6 +32,9 @@
     width: 60%;
     color: white !important;
     margin: 2px auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    font-weight: bold;
 }
 
     .btn:hover {
@@ -63,12 +66,22 @@
 
 label {
     margin-bottom: 10px;
+<<<<<<< HEAD
     font-weight:bold;
+=======
+    margin: auto 12%;
+>>>>>>> 8912803c4ac278e550877eaf915462b7e540e6b8
 }
 
 input {
     margin-bottom: 15px !important;
+<<<<<<< HEAD
     width: 99%;
+=======
+    margin: auto 12%;
+    width: 76%;
+    height: 40px !important;
+>>>>>>> 8912803c4ac278e550877eaf915462b7e540e6b8
     padding: 10px 2%;
 }
 
@@ -91,9 +104,10 @@ input {
     line-height: 2rem;
     font-size: 2rem;
     color: rgb(224, 34, 0);
-    font-weight: 600;
+    font-weight: 900;
     padding: 2%;
-    margin:5%;
+    margin:4%;
+    font-family:'Times New Roman', Times, serif;
 }
 
 .footer {

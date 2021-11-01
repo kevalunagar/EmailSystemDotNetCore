@@ -17,13 +17,13 @@
                     <br />
                     <label asp-for="Email"></label><br>
                     <input asp-for="Email" placeholder="Enter Email Address"><br />
-                    <span asp-validation-for="Email" class="text-danger"></span><br>
+                    <span asp-validation-for="Email" class="text-danger errorMsg"></span><br>
                     <label asp-for="Password"></label><br>
                     <input asp-for="Password" placeholder="Enter Password"><br />
-                    <span asp-validation-for="Password" class="text-danger"></span><br>
+                    <span asp-validation-for="Password" class="text-danger errorMsg"></span><br>
                 </p>
                 <div class="footer">
-                    <button class="btn" type="submit">Login</button>
+                    <button class="btn" type="submit" value="login">Login</button>
                     <br>
                     <br>
                     Don't Have An Account ? <a asp-controller="Account" asp-action="Register">Sign up</a>
