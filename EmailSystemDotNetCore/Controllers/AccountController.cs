@@ -43,9 +43,9 @@ namespace EmailSystemDotNetCore.Controllers
                         return LocalRedirect(returnUrl);
                     }
                     else
-                    return RedirectToAction("Mail", "Inbox");
+                    return RedirectToAction("Inbox", "Mail");
                 }
-                ModelState.AddModelError("", "EmailId or Password is invalid");
+                ModelState.AddModelError("loginError", "EmailId or Password is invalid");
             }
             return View(loginViewModel);
         }
@@ -72,7 +72,7 @@ namespace EmailSystemDotNetCore.Controllers
                 if (result.Succeeded)
                 {
                     await signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Mail", "Inbox");
+                    return RedirectToAction("Inbox", "Mail");
                 }
                 foreach(var err in result.Errors)
                 {
@@ -85,7 +85,7 @@ namespace EmailSystemDotNetCore.Controllers
         public async Task<IActionResult> LogOut()
         {
             await signInManager.SignOutAsync();
-            return RedirectToAction("Home", "Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

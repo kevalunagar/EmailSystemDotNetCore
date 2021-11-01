@@ -6,15 +6,15 @@
     <link rel="stylesheet" href="/css/login.css" />
 }
 <div class="form">
-    <form method="POST">
-        <div class="card shadow p-3 mb-5 bg-white rounded">
-            <img src="/Images/login_user.png" class="card-img-top user-image" alt="User Profile Image" />
+    <div class="card shadow p-3 mb-5 bg-white rounded">
+        <form method="POST">
             <div class="card-body">
                 <h5 class="card-title">
-                    <marquee behavior="alternate">Welcome to Login Page !</marquee>
+                    Sign In
                 </h5>
                 <p class="card-text">
-                    <div class="alert alert-danger" asp-validation-summary="All"></div>
+                        @Html.ValidationMessage("loginError",new { @class = "alert alert-danger errorBox" })<br />
+                    <br />
                     <label asp-for="Email"></label><br>
                     <input asp-for="Email" placeholder="Enter Email Address"><br />
                     <span asp-validation-for="Email" class="text-danger"></span><br>
@@ -29,6 +29,6 @@
                     Don't Have An Account ? <a asp-controller="Account" asp-action="Register">Sign up</a>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
