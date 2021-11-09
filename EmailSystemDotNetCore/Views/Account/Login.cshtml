@@ -13,8 +13,9 @@
                     Sign In
                 </h5>
                 <p class="card-text">
-                        @Html.ValidationMessage("loginError",new { @class = "alert alert-danger errorBox" })<br />
-                    <br />
+                    <ul>
+                        <li>@Html.ValidationMessage("loginError", new { @class = "errorBox" })</li>
+                    </ul>
                     <label asp-for="Email"></label><br>
                     <input asp-for="Email" placeholder="Enter Email Address"><br />
                     <span asp-validation-for="Email" class="text-danger errorMsg"></span><br>
@@ -26,7 +27,7 @@
                     <button class="btn" type="submit" value="login">Login</button>
                     <br>
                     <br>
-                    Don't Have An Account ? <a asp-controller="Account" asp-action="Register">Sign up</a>
+                    Don't Have An Account ? <a asp-controller="Account" asp-action="Register">New Account</a>
                 </div>
             </div>
         </form>

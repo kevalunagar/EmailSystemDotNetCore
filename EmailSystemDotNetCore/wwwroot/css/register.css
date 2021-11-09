@@ -32,7 +32,6 @@
     width: 60%;
     color: white !important;
     margin: 2px auto;
-    font-family: 'Times New Roman', Times, serif;
     font-size: large;
     font-weight: bold;
 }
@@ -65,23 +64,17 @@
 }
 
 label {
-    margin-bottom: 10px;
-<<<<<<< HEAD
-    font-weight:bold;
-=======
     margin: auto 12%;
->>>>>>> 8912803c4ac278e550877eaf915462b7e540e6b8
+}
+
+span {
+    margin-bottom : 2px !important;
 }
 
 input {
-    margin-bottom: 15px !important;
-<<<<<<< HEAD
-    width: 99%;
-=======
     margin: auto 12%;
     width: 76%;
     height: 40px !important;
->>>>>>> 8912803c4ac278e550877eaf915462b7e540e6b8
     padding: 10px 2%;
 }
 
@@ -107,7 +100,6 @@ input {
     font-weight: 900;
     padding: 2%;
     margin:4%;
-    font-family:'Times New Roman', Times, serif;
 }
 
 .footer {
@@ -119,3 +111,14 @@ input {
     width: 12px !important;
 }
 
+.errorBox {
+    color: red;
+    width: 60%;
+    margin: auto 20%;        
+    font-weight:600;
+}
+
+.errorMsg {
+    margin-bottom: 10px;
+    margin: auto 12%;
+}

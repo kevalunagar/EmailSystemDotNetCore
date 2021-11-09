@@ -68,19 +68,32 @@ label {
     margin-bottom: 10px;
     margin: auto 12%;
 }
+
 .errorMsg {
     margin-bottom: 10px;
     margin: auto 12%;
 }
-.errorBox{
-    margin:auto 25%;
+
+
+.errorBox {
+    color: red;
+    font-weight: 600; 
+    width: 60%;
+    margin: auto 20%;
 }
+
 
 input {
     margin: auto 12%;
     width: 76%;
     height: 40px !important;
     padding: 10px 2%;
+}
+
+alert {
+    margin-bottom: 10px !important;
+    margin-left: 27% !important;
+    margin-right: 27% !important;
 }
 
 .user-image {
@@ -115,6 +128,7 @@ input {
 .rememberCheckBox {
     width: 12px !important;
 }
+
 .field-validation-valid {
     display: none;
 }
