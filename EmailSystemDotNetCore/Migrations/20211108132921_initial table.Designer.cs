@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmailSystemDotNetCore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211030112950_changed identity")]
-    partial class changedidentity
+    [Migration("20211108132921_initial table")]
+    partial class initialtable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,41 @@ namespace EmailSystemDotNetCore.Migrations
                 .HasAnnotation("ProductVersion", "3.1.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("EmailSystemDotNetCore.Models.Mail", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("MarkAsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ReceiverUserModelId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("SenderUserModelId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("starred")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReceiverUserModelId");
+
+                    b.HasIndex("SenderUserModelId");
+
+                    b.ToTable("Mails");
+                });
 
             modelBuilder.Entity("EmailSystemDotNetCore.Models.UserModel", b =>
                 {
@@ -227,6 +262,17 @@ namespace EmailSystemDotNetCore.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("EmailSystemDotNetCore.Models.Mail", b =>
+                {
+                    b.HasOne("EmailSystemDotNetCore.Models.UserModel", "ReceiverUserModel")
+                        .WithMany("ReceiveMails")
+                        .HasForeignKey("ReceiverUserModelId");
+
+                    b.HasOne("EmailSystemDotNetCore.Models.UserModel", "SenderUserModel")
+                        .WithMany("SentMails")
+                        .HasForeignKey("SenderUserModelId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
