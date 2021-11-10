@@ -13,8 +13,8 @@ namespace EmailSystemDotNetCore.Models
         public string LastName { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string ImagePath { get; set; }
-        //public ICollection<Mail> SentMails { get; set; }
-        //public ICollection<Mail> ReceiveMails { get; set; }
-        
+        public ICollection<Mail> SentMails { get; set; }
+        public ICollection<Mail> ReceiveMails { get; set; }
+
     }
 }

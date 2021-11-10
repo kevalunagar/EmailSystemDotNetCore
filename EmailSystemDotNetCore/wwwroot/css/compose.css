@@ -1,0 +1,59 @@
+﻿form {
+    margin-bottom: -10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+.user-image {
+    width: 150px !important;
+    height: 150px;
+    margin: 15px auto -5px auto;
+}
+
+input, textarea {
+    margin-bottom: 10px !important;
+    width: 560px;
+    padding: 10px 20px;
+}
+
+.card {
+    width: fit-content;
+    width: -moz-fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.card-title {
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    color: orange;
+    font-weight: 600;
+}
+
+.footer {
+    margin-top: 10px;
+    margin-bottom: -5px;
+    text-align: center;
+}
+
+.btn-color {
+    background-color: #fca7a1 !important;
+    margin-left: 0px !important;
+}
+
+
+.jqte {
+    margin-top: 3px !important;
+}
+
+.jqte_editor {
+    height: 273px !important;
+}
+
+.jqte_tool_label {
+    height: 23px !important;
+}

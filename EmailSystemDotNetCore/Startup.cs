@@ -1,4 +1,5 @@
 using EmailSystemDotNetCore.Models;
+using EmailSystemDotNetCore.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,6 +33,9 @@ namespace EmailSystemDotNetCore
             services.AddIdentity<UserModel, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
             services.AddControllersWithViews();
+            services.AddScoped<IUserClaimsPrincipalFactory<UserModel>, ApplicationUserClaims>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IMailRepository, MailRepository>();
 
             services.Configure<IdentityOptions>(options =>
             {

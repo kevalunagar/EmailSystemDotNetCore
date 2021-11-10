@@ -10,6 +10,10 @@ namespace EmailSystemDotNetCore.Controllers
     {
         public IActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("/Mail/Inbox");
+            }
             return View();
         }
     }

@@ -17,11 +17,21 @@ namespace EmailSystemDotNetCore.Controllers
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            
+        }
+
+        void isUserAuthenticated()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("/Mail/Inbox");
+            }
         }
 
         [HttpGet]
         public IActionResult Login()
         {
+            isUserAuthenticated();
             return View();
         }
 
@@ -54,6 +64,7 @@ namespace EmailSystemDotNetCore.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+            isUserAuthenticated();
             return View();
         }
         [HttpPost]
@@ -66,7 +77,8 @@ namespace EmailSystemDotNetCore.Controllers
                     UserName=registerViewModel.Email,
                     FirstName = registerViewModel.FirstName,
                     LastName = registerViewModel.LastName,
-                    Email = registerViewModel.Email
+                    Email = registerViewModel.Email,
+                    ImagePath="avatar.png"
                 };
                 var result = await userManager.CreateAsync(user, registerViewModel.Password);
                 if (result.Succeeded)

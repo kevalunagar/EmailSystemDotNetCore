@@ -1,0 +1,59 @@
+﻿.card {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin-bottom: 20px;
+    padding:10px;
+}
+
+.card-title {
+    line-height: 2rem;
+    font-size: 1.4rem;
+    color: #202124;
+    font-weight: 600;
+    margin-left: 45px;
+    margin-bottom: 20px !important;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+}
+
+.mail-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-top:10px;
+}
+
+.time {
+    text-align: right;
+    float: right;
+}
+
+.des {
+    /* border: solid 0.1px #9b9ca0; */
+    background: #f8f9fa;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.card-text .btn {
+    margin-right: 10px;
+}
+
+.small-btn {
+    color: #6c757d;
+    width: 45px;
+    height: 30px;
+    border: 1px solid white;
+    line-height: 20px;
+}
+
+    .small-btn:hover {
+        color: red;
+    }
+

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EmailSystemDotNetCore.Migrations
 {
-    public partial class Addidentity : Migration
+    public partial class initialtable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -39,7 +39,11 @@ namespace EmailSystemDotNetCore.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false)
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    DateOfBirth = table.Column<DateTime>(nullable: true),
+                    ImagePath = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -152,6 +156,36 @@ namespace EmailSystemDotNetCore.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Mails",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    SenderUserModelId = table.Column<string>(nullable: true),
+                    ReceiverUserModelId = table.Column<string>(nullable: true),
+                    Subject = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    Date = table.Column<DateTime>(nullable: false),
+                    MarkAsRead = table.Column<bool>(nullable: false),
+                    starred = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Mails", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Mails_AspNetUsers_ReceiverUserModelId",
+                        column: x => x.ReceiverUserModelId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Mails_AspNetUsers_SenderUserModelId",
+                        column: x => x.SenderUserModelId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -190,6 +224,16 @@ namespace EmailSystemDotNetCore.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Mails_ReceiverUserModelId",
+                table: "Mails",
+                column: "ReceiverUserModelId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Mails_SenderUserModelId",
+                table: "Mails",
+                column: "SenderUserModelId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -208,6 +252,9 @@ namespace EmailSystemDotNetCore.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Mails");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

@@ -63,6 +63,10 @@
     {
       "library": "jquery-validation-unobtrusive@3.2.12",
       "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
+    },
+    {
+      "library": "jquery-te@1.4.0",
+      "destination": "wwwroot/lib/jquery-te/"
     }
   ]
 }

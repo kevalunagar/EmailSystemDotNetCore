@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Mail>
+@{
+    ViewBag.Title = "Sent Mails";
+}
+@section Styles{
+
+}
+<div class="btnPanel">
+    <a asp-action="SentMails"><i class="fas fa-redo"></i></a>
+</div>
+
+<div class="mainSection">
+    <table class="table table-hover">
+        <tbody>
+            @foreach (var mail in Model)
+            {
+
+            <tr onclick="location.href = '@Url.Action("Details", "Mail", new { id = mail.Id })'">
+                <td>
+                    <span class="@(mail.MarkAsRead?"afterReadMail":"beforeReadMail")"><i class='fa fa-check'></i></span>
+                </td>
+                <td>
+                    <a asp-route-id=@mail.Id asp-action="starredBtnClick"><i class="@(mail.starred?"fas fa-star fa-lg":"far fa-star fa-lg")"></i></a>
+                </td>
+                <td>
+                    @(mail.ReceiverUserModel.FirstName+" "+mail.ReceiverUserModel.LastName)
+                </td>
+                <td>
+                    @mail.Subject
+                </td>
+                <td>
+                    @mail.Date
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts{
+
+}
+

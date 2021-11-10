@@ -1,0 +1,33 @@
+﻿@model MailViewModel
+@{
+ViewBag.Title="compose";
+}
+@section Styles{
+<link rel="stylesheet" href="/lib/jquery-te/jquery-te.css" />
+<link rel="stylesheet" href="/css/compose.css" />
+}
+<form method="post">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text">
+                <label asp-for="receiverUserEmail" ></label><br />
+                <input asp-for="receiverUserEmail" placeholder="Enter Email" /><br />
+                <span class="text-danger" asp-validation-for="receiverUserEmail"></span>
+                <br />
+                <label asp-for="subject"></label><br />
+                <input asp-for="subject" placeholder="Enter Subject" />
+                <br />
+                <label asp-for="description"></label><br />
+                <textarea class="textEditor" asp-for="description"></textarea>
+            </p>
+            <button type="submit" class="btn btn-color col-12" >Send</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+<script src="/lib/jquery-te/jquery-te.min.js" type="text/javascript"></script>
+<script>
+    $(".textEditor").jqte();
+</script>
+}
