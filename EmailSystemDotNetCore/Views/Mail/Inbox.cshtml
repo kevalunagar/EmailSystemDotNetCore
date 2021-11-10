@@ -1,6 +1,13 @@
 ﻿@model IEnumerable<Mail>
+@inject MailRepository mailRepository
 @{
-    ViewBag.Title = "Inbox";
+    int markAsRead = mailRepository.getNumberOfNotReadMailOfUser(User.Identity.Name);
+    if (markAsRead == 0)
+    {
+        ViewBag.Title = "Inbox - " + User.Identity.Name;
+    }
+    else
+        ViewBag.Title = "Inbox ("+mailRepository.getNumberOfNotReadMailOfUser(User.Identity.Name)+") - "+User.Identity.Name;
 }
 @section Styles{
 

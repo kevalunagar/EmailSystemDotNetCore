@@ -318,8 +318,9 @@ namespace EmailSystemDotNetCore.Migrations
                         .HasForeignKey("SenderUserModelId");
 
                     b.HasOne("EmailSystemDotNetCore.Models.Mail", "mail")
-                        .WithMany("replayMails")
-                        .HasForeignKey("mailId");
+                        .WithMany("replyMails")
+                        .HasForeignKey("mailId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

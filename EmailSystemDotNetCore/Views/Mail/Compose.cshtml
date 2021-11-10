@@ -9,6 +9,7 @@ ViewBag.Title="compose";
 <form method="post">
     <div class="card">
         <div class="card-body">
+            <div asp-validation-summary="All"></div>
             <p class="card-text">
                 <label asp-for="receiverUserEmail" ></label><br />
                 <input asp-for="receiverUserEmail" placeholder="Enter Email" /><br />

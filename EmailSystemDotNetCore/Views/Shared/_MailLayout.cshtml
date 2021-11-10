@@ -28,16 +28,16 @@
                 <div class="logo">Email System</div>
                 <ul>
                     <div class="dropdown">
-                        <img src=@("/Images/"+User.FindFirst("userProfile").Value) class="dropbtn rounded-circle">
+                        <img src=@("/Images/"+ViewData["imagePath"]) class="dropbtn rounded-circle">
                         <div class="dropdown-content">
                             <div class="dropdown-item">
-                                <img src=@("/Images/"+User.FindFirst("userProfile").Value) ToolTip="profile" class="navProfileImg rounded-circle" />
+                                <img src=@("/Images/"+ViewData["imagePath"])  class="navProfileImg rounded-circle" />
                             </div>
                             <div class="dropdown-item">
-                                @(User.FindFirst("userFirstName").Value +" "+User.FindFirst("userLastName").Value)
+                                 @ViewData["FullName"]
                             </div>
                             <div class="dropdown-item">
-                                @User.Identity.Name
+                                @ViewData["email"]
                             </div>
 
                             <div class="dropdown-item">

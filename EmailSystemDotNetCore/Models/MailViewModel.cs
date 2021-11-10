@@ -9,7 +9,6 @@ namespace EmailSystemDotNetCore.Models
     public class MailViewModel
     {
         [Required(ErrorMessage ="Email required")]
-        [EmailAddress]
         [Display(Name ="To")]
         public string receiverUserEmail { get; set; }
        

@@ -1,6 +1,6 @@
 ﻿@model MailDetailsViewModel
 @{ 
-    ViewBag.Title = "details";
+    ViewBag.Title = Model.mail.Subject;
 }
 @section Styles{
     <link rel="stylesheet" href="/css/descriptionCss.css" />
@@ -46,7 +46,7 @@
 
                     </td>
                     <td class="auto-style4">
-                        <label>@Model.mail.Date</label>
+                        <label>@Model.mail.Date.ToString("MMM dd, yyyy h:m tt")</label>
                     </td>
                     <td class="auto-style5">
                         <a asp-action="compose" asp-route-id=@Model.mail.Id asp-route-btn="reply"><i class='fas fa-reply fa-lg small-btn'></i></a>
