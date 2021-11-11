@@ -14,7 +14,7 @@ namespace EmailSystemDotNetCore.Models
         public string LastName { get; set; }
 
         [Required]
-        [EmailAddress]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required]

@@ -1,6 +1,4 @@
-﻿
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -11,9 +9,9 @@
     <link rel="stylesheet" href="/css/style.css" />
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    @if(IsSectionDefined("Styles"))
+    @if (IsSectionDefined("Styles"))
     {
-    RenderSection("Styles", required: false);
+        RenderSection("Styles", required: false);
     }
 </head>
 <body>
@@ -25,28 +23,28 @@
                 <div></div>
             </div>
             <div class="top_menu">
-                <a href="/" class="logo">Email System</a>
+                <div class="logo">Email System</div>
                 <ul>
                     <div class="dropdown">
-                        <img src=@("/Images/"+User.FindFirst("userProfile").Value) class="dropbtn rounded-circle">
+                        <img src=@("/Images/"+ViewData["imagePath"]) class="dropbtn rounded-circle">
                         <div class="dropdown-content">
                             <div class="dropdown-item">
-                                <img src=@("/Images/"+User.FindFirst("userProfile").Value) ToolTip="profile" class="navProfileImg rounded-circle" />
+                                <img src=@("/Images/"+ViewData["imagePath"]) class="navProfileImg rounded-circle" />
                             </div>
                             <div class="dropdown-item">
-                                <p class="fullName">@(User.FindFirst("userFirstName").Value +" "+User.FindFirst("userLastName").Value)</p>
+                                @ViewData["FullName"]
                             </div>
                             <div class="dropdown-item">
-                                <p class="email">@User.Identity.Name</p>
+                                @ViewData["email"]
                             </div>
 
                             <div class="dropdown-item">
-                                <a asp-action="Profile" class="profileLink btn btn-light"> Manage your Account</a>
+                                <a asp-action="Profile" class="profileLink btn btn-light"> Manage my account</a>
                             </div>
                             <hr />
 
                             <div class="dropdown-item">
-                                <a asp-controller="Account" class="logout btn" asp-action="Logout">Logout</a>
+                                <a asp-controller="Account" class="logout btn" asp-action="Logout">logout</a>
                             </div>
                         </div>
                     </div>
@@ -64,19 +62,19 @@
 
                 </li>
                 <li>
-                    <a asp-action="Inbox" >
+                    <a asp-action="Inbox">
                         <span class="s-icon"><i class="fas fa-inbox"></i></span>
                         <span class="s-title">Inbox</span>
                     </a>
                 </li>
                 <li>
-                    <a asp-action="Starred" >
+                    <a asp-action="Starred">
                         <span class="s-icon"><i class="fas fa-star"></i></span>
                         <span class="s-title">Starred</span>
                     </a>
                 </li>
                 <li>
-                    <a asp-action="SentMails" >
+                    <a asp-action="SentMails">
                         <span class="s-icon"><i class="fas fa-share-square"></i></span>
                         <span class="s-title">Sent</span>
                     </a>
@@ -91,7 +89,7 @@
         <script type="text/javascript" src="/js/afterLogin.js"></script>
         @if (IsSectionDefined("Scripts"))
         {
-        @RenderSection("Scripts", required: false);
+            @RenderSection("Scripts", required: false);
         }
 </body>
 </html>

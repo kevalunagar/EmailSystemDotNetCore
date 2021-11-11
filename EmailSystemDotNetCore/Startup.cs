@@ -33,9 +33,9 @@ namespace EmailSystemDotNetCore
             services.AddIdentity<UserModel, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
             services.AddControllersWithViews();
-            services.AddScoped<IUserClaimsPrincipalFactory<UserModel>, ApplicationUserClaims>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IMailRepository, MailRepository>();
+            services.AddScoped<MailRepository>();
 
             services.Configure<IdentityOptions>(options =>
             {

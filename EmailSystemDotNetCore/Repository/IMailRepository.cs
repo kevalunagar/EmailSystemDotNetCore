@@ -19,5 +19,7 @@ namespace EmailSystemDotNetCore.Repository
 
         public IEnumerable<ReplyMail> getReplyMail(string id);
         public ReplyMail getOneReplyMail(string id);
+        public int getNumberOfNotReadMailOfUser(string email);
+        public void changeStatusOfMail(string id);
     }
 }

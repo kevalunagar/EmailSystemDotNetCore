@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace EmailSystemDotNetCore.Controllers
 {
     [Authorize]
-    public class MailController : Controller
+    public class MailController : MailBaseController
     {
         private readonly UserManager<UserModel> userManager;
         private readonly IUserRepository userRepository;
@@ -28,7 +28,7 @@ namespace EmailSystemDotNetCore.Controllers
             ,IUserRepository userRepository
             ,AppDbContext appDbContext
             ,IMailRepository mailRepository
-            ,IWebHostEnvironment hostEnvironment)
+            ,IWebHostEnvironment hostEnvironment):base(appDbContext)
         {
             this.userManager = userManager;
             this.userRepository = userRepository;
@@ -108,6 +108,11 @@ namespace EmailSystemDotNetCore.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (userRepository.getUserByEmail(model.receiverUserEmail).Result == null)
+                {
+                    ModelState.AddModelError("emailError", "Please Enter Valid Email address");
+                    return View(model);
+                }
                 if (id != null && btn.Equals("reply"))
                 {
                     Mail replyOfMail = mailRepository.getMail(id);
@@ -156,7 +161,7 @@ namespace EmailSystemDotNetCore.Controllers
                 };
                 appDbContext.Mails.Add(mail);
                 appDbContext.SaveChanges();
-                return RedirectToAction("Inbox", "Mail");
+                return RedirectToAction("SentMails");
             }
             return View(model);
         }
@@ -167,7 +172,7 @@ namespace EmailSystemDotNetCore.Controllers
             Mail mail= mailRepository.getMail(id);
             if (userRepository.getLoggedUser(User).Result.Id == mail.ReceiverUserModel.Id)
             {
-                mailRepository.markAsReadMail(id);
+                mailRepository.changeStatusOfMail(id);
             }
             IEnumerable<ReplyMail> replyMails = mailRepository.getReplyMail(mail.Id);
             MailDetailsViewModel model = new MailDetailsViewModel

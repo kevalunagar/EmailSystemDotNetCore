@@ -64,8 +64,9 @@ namespace EmailSystemDotNetCore.Repository
         {
             return appDbContext.Mails
                 .OrderByDescending(m => m.Date)
-                .Where(m => m.SenderUserModel.Email == email)
-                .Include(m => m.ReceiverUserModel);
+                .Include(m=>m.ReceiverUserModel)
+                .Include(m=>m.SenderUserModel)
+                .Where(m => m.SenderUserModel.Email == email);
         }
 
         public void markAsReadMail(string id)
@@ -87,6 +88,18 @@ namespace EmailSystemDotNetCore.Repository
             return appDbContext.Mails.OrderByDescending(m => m.Date)
                 .Where(m => ((m.SenderUserModel.Email == email || m.ReceiverUserModel.Email == email) && m.starred == true))
                 .Include(m => m.SenderUserModel);
+        }
+
+        public int getNumberOfNotReadMailOfUser(string email)
+        {
+            return appDbContext.Mails.Where(m => (m.ReceiverUserModel.Email == email && m.MarkAsRead == false)).Count();
+        }
+
+        public void changeStatusOfMail(string id)
+        {
+            Mail mail= getMail(id);
+            mail.MarkAsRead = true;
+            updateMail(mail);
         }
     }
 }

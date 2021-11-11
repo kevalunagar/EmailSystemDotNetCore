@@ -31,7 +31,8 @@ namespace EmailSystemDotNetCore.Models
             modelBuilder.Entity<ReplyMail>()
                 .HasOne<Mail>(r => r.mail)
                 .WithMany(m => m.replyMails)
-                .HasForeignKey(r => r.mailId);
+                .HasForeignKey(r => r.mailId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
