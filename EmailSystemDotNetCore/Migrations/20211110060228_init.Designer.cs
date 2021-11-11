@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmailSystemDotNetCore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211109084438_reply table added")]
-    partial class replytableadded
+    [Migration("20211110060228_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -320,7 +320,7 @@ namespace EmailSystemDotNetCore.Migrations
                         .HasForeignKey("SenderUserModelId");
 
                     b.HasOne("EmailSystemDotNetCore.Models.Mail", "mail")
-                        .WithMany("replayMails")
+                        .WithMany("replyMails")
                         .HasForeignKey("mailId");
                 });
 

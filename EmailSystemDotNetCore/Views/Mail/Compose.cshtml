@@ -10,17 +10,18 @@ ViewBag.Title="compose";
     <div class="card">
         <div class="card-body">
             <p class="card-text">
-                <label asp-for="receiverUserEmail" ></label><br />
+                <label asp-for="receiverUserEmail"></label><br />
                 <input asp-for="receiverUserEmail" placeholder="Enter Email" /><br />
-                <span class="text-danger" asp-validation-for="receiverUserEmail"></span>
+                <span class="text-danger errorMsg" asp-validation-for="receiverUserEmail"></span>
                 <br />
-                <label asp-for="subject"></label><br />
-                <input asp-for="subject" placeholder="Enter Subject" />
+                <label asp-for="Subject"></label><br />
+                <input asp-for="Subject" placeholder="Enter Subject" />
+                <p class="text-danger errorMsg"></p>
                 <br />
-                <label asp-for="description"></label><br />
-                <textarea class="textEditor" asp-for="description"></textarea>
+                <label asp-for="Description"></label><br />
+                <textarea class="textEditor" asp-for="Description"></textarea>
             </p>
-            <button type="submit" class="btn btn-color col-12" >Send</button>
+            <button type="submit" class="btn " >Send</button>
         </div>
     </div>
 </form>

@@ -25,7 +25,7 @@
                 <div></div>
             </div>
             <div class="top_menu">
-                <div class="logo">Email System</div>
+                <a href="/" class="logo">Email System</a>
                 <ul>
                     <div class="dropdown">
                         <img src=@("/Images/"+User.FindFirst("userProfile").Value) class="dropbtn rounded-circle">
@@ -34,19 +34,19 @@
                                 <img src=@("/Images/"+User.FindFirst("userProfile").Value) ToolTip="profile" class="navProfileImg rounded-circle" />
                             </div>
                             <div class="dropdown-item">
-                                @(User.FindFirst("userFirstName").Value +" "+User.FindFirst("userLastName").Value)
+                                <p class="fullName">@(User.FindFirst("userFirstName").Value +" "+User.FindFirst("userLastName").Value)</p>
                             </div>
                             <div class="dropdown-item">
-                                @User.Identity.Name
+                                <p class="email">@User.Identity.Name</p>
                             </div>
 
                             <div class="dropdown-item">
-                                <a asp-action="Profile" class="profileLink btn btn-light"> Manage my account</a>
+                                <a asp-action="Profile" class="profileLink btn btn-light"> Manage your Account</a>
                             </div>
                             <hr />
 
                             <div class="dropdown-item">
-                                <a asp-controller="Account" class="logout" asp-action="Logout">logout</a>
+                                <a asp-controller="Account" class="logout btn" asp-action="Logout">Logout</a>
                             </div>
                         </div>
                     </div>

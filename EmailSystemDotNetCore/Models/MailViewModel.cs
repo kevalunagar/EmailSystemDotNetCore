@@ -13,9 +13,9 @@ namespace EmailSystemDotNetCore.Models
         [Display(Name ="To")]
         public string receiverUserEmail { get; set; }
        
-        public string subject { get; set; }
+        public string Subject { get; set; }
 
         [DataType(DataType.MultilineText)]
-        public string description { get; set; }
+        public string Description { get; set; }
     }
 }

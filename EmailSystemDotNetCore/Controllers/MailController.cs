@@ -79,8 +79,8 @@ namespace EmailSystemDotNetCore.Controllers
                     MailViewModel model1 = new MailViewModel
                     {
                         receiverUserEmail = btn == "reply" ? replyMail.SenderUserModel.Email : null,
-                        subject = btn == "reply" ? replyMail.mail.Subject : null,
-                        description = btn == "forward" ? replyMail.Description : null,
+                        Subject = btn == "reply" ? replyMail.mail.Subject : null,
+                        Description = btn == "forward" ? replyMail.Description : null,
                     };
                     return View(model1);
                 }
@@ -88,8 +88,8 @@ namespace EmailSystemDotNetCore.Controllers
                 MailViewModel model = new MailViewModel
                 {
                     receiverUserEmail = btn=="reply"?mail.SenderUserModel.Email:null,
-                    subject = btn=="reply"? mail.Subject:null,
-                    description=btn=="forward"?mail.Description:null,
+                    Subject = btn=="reply"? mail.Subject:null,
+                    Description=btn=="forward"?mail.Description:null,
                 };
                 return View(model);
             }
@@ -120,7 +120,7 @@ namespace EmailSystemDotNetCore.Controllers
                             SenderUserModel = userRepository.getLoggedUser(User).Result,
                             ReceiverUserModel = userRepository.getUserByEmail(model.receiverUserEmail).Result,
                             Date = DateTime.Now,
-                            Description = model.description,
+                            Description = model.Description,
                             MarkAsRead = false,
                             mail = replyMail1.mail
                         };
@@ -135,7 +135,7 @@ namespace EmailSystemDotNetCore.Controllers
                         SenderUserModel = userRepository.getLoggedUser(User).Result,
                         ReceiverUserModel = userRepository.getUserByEmail(model.receiverUserEmail).Result,
                         Date = DateTime.Now,
-                        Description = model.description,
+                        Description = model.Description,
                         MarkAsRead = false,
                         mail = replyOfMail
                     };
@@ -149,8 +149,8 @@ namespace EmailSystemDotNetCore.Controllers
                     SenderUserModel = userRepository.getLoggedUser(User).Result,
                     ReceiverUserModel = userRepository.getUserByEmail(model.receiverUserEmail).Result,
                     Date = DateTime.Now,
-                    Subject = model.subject != null ? model.subject : "(No Subject)",
-                    Description = model.description,
+                    Subject = model.Subject != null ? model.Subject : "(No Subject)",
+                    Description = model.Description,
                     MarkAsRead = false,
                     starred = false
                 };

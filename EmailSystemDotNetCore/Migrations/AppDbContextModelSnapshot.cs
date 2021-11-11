@@ -318,7 +318,7 @@ namespace EmailSystemDotNetCore.Migrations
                         .HasForeignKey("SenderUserModelId");
 
                     b.HasOne("EmailSystemDotNetCore.Models.Mail", "mail")
-                        .WithMany("replayMails")
+                        .WithMany("replyMails")
                         .HasForeignKey("mailId");
                 });
 
