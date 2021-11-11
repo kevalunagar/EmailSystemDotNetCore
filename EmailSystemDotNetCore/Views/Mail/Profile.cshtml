@@ -10,22 +10,23 @@
         <img src="@("/Images/"+Model.imagePath)" class="rounded-circle card-img-top user-image" alt="User Profile Image" />
         <div class="card-body">
             <h3 class="card-title">
-               Update your Profile 
+                Update your Profile
             </h3>
             <p class="card-text">
-                <label asp-for="FirstName"></label><br />
-                <input asp-for="FirstName" placeholder="Enter Firstname" /><br />
-                <span asp-validation-for="FirstName" class="text-danger errorMsg"></span><br />
-                <label asp-for="LastName"></label><br />
-                <input asp-for="LastName" placeholder="Enter Lastname" /><br />
-                <span asp-validation-for="LastName" class="text-danger errorMsg"></span><br />
-                <label asp-for="DateOfBirth"></label><br />
-                <input asp-for="DateOfBirth" /><br />
-                <label asp-for="ImageFile"></label>
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" placeholder="Enter Firstname" />
+                <span asp-validation-for="FirstName" class="errMsg"></span>
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" placeholder="Enter Lastname" />
+                <span asp-validation-for="LastName" class="errMsg"></span>
+                <label asp-for="DateOfBirth"></label>
+                <input asp-for="DateOfBirth" />
+                <label asp-for="ImageFile" class="img"></label>
                 <input asp-for="ImageFile" class="form-control" />
             </p>
+            <br />
+            <button type="submit" class="btn btn-success">Update</button> &nbsp;
+            <button type="reset" class="btn btn-danger">Cancel</button>
         </div>
-        <button type="submit" class="btn btn-success">Update</button>
-        <button type="reset" class="btn btn-danger">Cancel</button>
     </div>
 </form>

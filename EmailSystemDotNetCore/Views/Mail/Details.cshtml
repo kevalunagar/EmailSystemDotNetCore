@@ -86,7 +86,7 @@
 
                             </td>
                             <td class="auto-style4">@replymail.Date.ToString("MMM dd, yyyy h:m tt")</td>
-                            <td class="auto-style5"><a asp-action="compose" asp-route-id=@replymail.Id asp-route-btn="reply"><i class="fas fa-reply fa-lg small-btn"></a></td>
+                            <td class="auto-style5"><a asp-action="compose" asp-route-id=@replymail.Id asp-route-btn="reply"><i class="fas fa-reply fa-lg small-btn"></i></a></td>
                             <td><a asp-action="compose" asp-route-id=@replymail.Id asp-route-btn="forward"><i class="fas fa-arrow-right fa-lg small-btn"></i></a></td>
                         </tr>
                     </table>
@@ -95,8 +95,8 @@
                     <div class="des">
                         @Html.Raw(@replymail.Description)
                     </div>
-                    <a asp-action="compose" asp-route-id=@replymail.Id asp-route-btn="reply" class="btn btn-outline-secondary"><i class="fas fa-lg fa-reply"></i>&nbsp;&nbsp;Reply</a>
-                    <a asp-action="compose" asp-route-id=@replymail.Id asp-route-btn="forward" class="btn btn-outline-secondary"><i class="fas fa-lg fa-arrow-right"></i>&nbsp;&nbsp;Forward</a>
+                    <a asp-action="compose" asp-route-id=@replymail.Id asp-route-btn="reply" class="btn btn-outline-secondary"><i class="fas fa-lg fa-reply small-btn"></i>&nbsp;&nbsp;Reply</a>
+                    <a asp-action="compose" asp-route-id=@replymail.Id asp-route-btn="forward" class="btn btn-outline-secondary"><i class="fas fa-lg fa-arrow-right small-btn"></i>&nbsp;&nbsp;Forward</a>
                 </div>
             </div>
             }

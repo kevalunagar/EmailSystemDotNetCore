@@ -2,12 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 * {
-    margin: 0;
     list-style: none;
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+}
+
+
+.errMsg {
+    font-weight: 400;
+    font-size: medium;
+    display:block;
+    color: rgb(197, 1, 1) !important;
+    margin-bottom:15px;
+    margin-top:-10px;
 }
 
 .navbar .navbar-brand {
@@ -68,36 +77,25 @@
     margin: 20px 10px 0px;
 }
 
-form {
-    background-color: white;
-    margin-bottom: -10px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
-
 label {
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-input[type=text],input[type=date],input[type=file] {
-    margin-bottom: 10px !important;
-    width: 450px;
+input{
+    width: 100%;
     padding: 10px 20px;
+    margin-bottom:15px !important;
 }
 
 .user-image {
-    width: 150px !important;
-    height: 150px;
+    width: 100px !important;
+    height: 100px;
     margin-left:40%;
 }
-
 .card {
     width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white;
-    margin-bottom: 10px;
+    margin:1% 30%;
 }
 
 .card-title {
@@ -107,7 +105,7 @@ input[type=text],input[type=date],input[type=file] {
     color: rgb(224, 34, 0) !important;
     font-weight: 900;
     padding: 2%;
-    margin: 5%;
+    margin: 2%;
 }
 .card-text:last-child {
     margin-bottom: 0;
@@ -119,6 +117,10 @@ input[type=text],input[type=date],input[type=file] {
     text-align: center;
 }
 
-.btn-color {
-    background-color: orange !important;
+.btn{
+    border-radius:25px;
+}
+
+.img {
+    margin-top:5px;
 }

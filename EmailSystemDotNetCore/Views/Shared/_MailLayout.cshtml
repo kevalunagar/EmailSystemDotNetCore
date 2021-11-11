@@ -23,7 +23,7 @@
                 <div></div>
             </div>
             <div class="top_menu">
-                <div class="logo">Email System</div>
+                <a href="/" class="logo">Email System</a>
                 <ul>
                     <div class="dropdown">
                         <img src=@("/Images/"+ViewData["imagePath"]) class="dropbtn rounded-circle">
@@ -32,19 +32,19 @@
                                 <img src=@("/Images/"+ViewData["imagePath"]) class="navProfileImg rounded-circle" />
                             </div>
                             <div class="dropdown-item">
-                                @ViewData["FullName"]
+                                <p class="fullName">@ViewData["FullName"]</p>
                             </div>
                             <div class="dropdown-item">
-                                @ViewData["email"]
+                                <p class="email">@ViewData["email"]</p>
                             </div>
 
                             <div class="dropdown-item">
-                                <a asp-action="Profile" class="profileLink btn btn-light"> Manage my account</a>
+                                <a asp-action="Profile" class="profileLink btn btn-light"> Manage your Account</a>
                             </div>
                             <hr />
 
                             <div class="dropdown-item">
-                                <a asp-controller="Account" class="logout btn" asp-action="Logout">logout</a>
+                                <a asp-controller="Account" class="logout btn" asp-action="Logout">Logout</a>
                             </div>
                         </div>
                     </div>

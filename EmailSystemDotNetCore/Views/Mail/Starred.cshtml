@@ -1,53 +1,53 @@
 ﻿@model IEnumerable<Mail>
 @{
-    ViewBag.Title = "Starred - "+User.Identity.Name;
+    ViewBag.Title = "Starred - " + User.Identity.Name;
 }
 @section Styles{
-
+    <link rel="stylesheet" href="/css/inbox.css" />
 }
 <div class="btnPanel">
     <a asp-action="Starred"><i class="fas fa-redo"></i></a>
 </div>
 
 <div class="mainSection">
-    <table class="table table-hover">
+    <table class="table">
         <tbody>
             @foreach (var mail in Model)
             {
-            <tr onclick="location.href = '@Url.Action("Details", "Mail", new { id = mail.Id })'" class="@(mail.MarkAsRead?"":"markAsReadClass")">
-                <td>
+                <tr onclick="location.href = '@Url.Action("Details", "Mail", new { id = mail.Id })'" class="@(mail.MarkAsRead?"":"markAsReadClass")">
+                    <td class="star">
 
-                    <a asp-route-id=@mail.Id asp-action="starredBtnClick"><i class="fas fa-star fa-lg"></i></a>
-                </td>
-                <td>
-                    @(mail.SenderUserModel.FirstName+" "+mail.SenderUserModel.LastName)
-                </td>
-                <td>
-                    @mail.Subject
-                </td>
-                <td>
-                    @mail.Date
-                </td>
-                <td>
-                    <a asp-route-id=@mail.Id asp-action="deleteBtnClick">
-                        <i class="fa fa-trash fa-lg"></i>
-                    </a>
-                </td>
-                <td>
-                    @if (mail.MarkAsRead)
-                    {
-                        <a asp-route-id=@mail.Id asp-action="markAsReadClick">
-                            <i class='fa fa-envelope fa-lg'></i>
+                        <a asp-route-id=@mail.Id asp-action="starredBtnClick"><i class="fas fa-star fa-lg starMail"></i></a>
+                    </td>
+                    <td class="nameMail">
+                        @(mail.SenderUserModel.FirstName+" "+mail.SenderUserModel.LastName)
+                    </td>
+                    <td class="subject">
+                        @mail.Subject
+                    </td>
+                    <td class="date">
+                        @mail.Date
+                    </td>
+                    <td class="delete">
+                        <a asp-route-id=@mail.Id asp-action="deleteBtnClick">
+                            <i class="fa fa-trash fa-lg"></i>
                         </a>
-                    }
-                    else
-                    {
-                        <a asp-route-id=@mail.Id asp-action="markAsReadClick">
-                            <i class='fa fa-envelope-open fa-lg'></i>
-                        </a>
-                    }
-                </td>
-            </tr>
+                    </td>
+                    <td class="read">
+                        @if (mail.MarkAsRead)
+                        {
+                            <a asp-route-id=@mail.Id asp-action="markAsReadClick">
+                                <i class='fa fa-envelope fa-lg'></i>
+                            </a>
+                        }
+                        else
+                        {
+                            <a asp-route-id=@mail.Id asp-action="markAsReadClick">
+                                <i class='fa fa-envelope-open fa-lg'></i>
+                            </a>
+                        }
+                    </td>
+                </tr>
             }
         </tbody>
     </table>

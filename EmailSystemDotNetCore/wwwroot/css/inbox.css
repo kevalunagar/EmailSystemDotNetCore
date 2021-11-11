@@ -62,3 +62,8 @@ a {
 .nameMail {
     width: 20%;
 }
+
+.beforeReadMail {
+    width: 3%;
+    color:gray;
+}

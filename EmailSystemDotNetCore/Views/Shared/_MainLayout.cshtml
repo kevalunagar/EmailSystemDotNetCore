@@ -4,10 +4,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    @if(IsSectionDefined("Styles"))
+    @if (IsSectionDefined("Styles"))
     {
         RenderSection("Styles", required: false);
     }
@@ -15,10 +16,10 @@
 <body>
     <!-- Navbar -->
     <section>
-        <nav class="navbar navbar-expand-lg nav-custom custom-shadow">
+        <nav class="navbar navbar-expand-lg nav-custom shadow-sm p-3 mb-5 bg-white rounded">
             <div class="container-fluid">
                 <img src="/Images/logo.jpg" class="logo-img" alt="logo">
-                <a class="navbar-brand" href="#">Email System</a>
+                <a class="navbar-brand" href="/">Email System</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

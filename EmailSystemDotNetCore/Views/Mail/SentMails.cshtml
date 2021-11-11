@@ -3,32 +3,32 @@
     ViewBag.Title = "Sent Mail - "+User.Identity.Name;
 }
 @section Styles{
-
+    <link rel="stylesheet" href="/css/inbox.css" />
 }
 <div class="btnPanel">
     <a asp-action="SentMails"><i class="fas fa-redo"></i></a>
 </div>
 
 <div class="mainSection">
-    <table class="table table-hover">
+    <table class="table">
         <tbody>
             @foreach (var mail in Model)
             {
 
             <tr onclick="location.href = '@Url.Action("Details", "Mail", new { id = mail.Id })'">
-                <td>
+                <td class="check">
                     <span class="@(mail.MarkAsRead?"afterReadMail":"beforeReadMail")"><i class='fa fa-check'></i></span>
                 </td>
-                <td>
-                    <a asp-route-id=@mail.Id asp-action="starredBtnClick"><i class="@(mail.starred?"fas fa-star fa-lg":"far fa-star fa-lg")"></i></a>
+                <td class="star" style="width:3%">
+                    <a asp-route-id=@mail.Id asp-action="starredBtnClick"><i class="@(mail.starred?"fas fa-star fa-lg":"far fa-star fa-lg") starMail"></i></a>
                 </td>
-                <td>
+                <td class="nameMail" style="width:32%">
                     @(mail.ReceiverUserModel.FirstName+" "+mail.ReceiverUserModel.LastName)
                 </td>
-                <td>
+                <td class="subject" style="width:42%">
                     @mail.Subject
                 </td>
-                <td>
+                <td class="date" style="width:20%">
                     @mail.Date
                 </td>
             </tr>

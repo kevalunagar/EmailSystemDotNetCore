@@ -15,12 +15,14 @@
 }
 
     .wrapper .top_navbar {
-        width: calc(100% - 20px);
+        width:100%;
         height: 60px;
         display: flex;
         position: fixed;
         top: 0px;
         z-index: 1;
+        box-shadow:rgba(0,0,0,0.4) 0 1px 2px ;
+        margin-left:-9px;
     }
 
         .wrapper .top_navbar .hamburger {
@@ -29,11 +31,13 @@
             padding: 15px 17px;
             background: white;
             cursor: pointer;
+            border:0.1px white;
+            margin-left: -5px;
         }
 
             .wrapper .top_navbar .hamburger:hover {
                 border-radius: 45px;
-                background: rgba(242,245,245,0.8);
+                background: rgba(242,245,245,0.5);
             }
 
             .wrapper .top_navbar .hamburger div {
@@ -45,15 +49,16 @@
             }
 
         .wrapper .top_navbar .top_menu {
-            width: calc(100% - 70px);
+            width: calc(100% - 65px);
             height: 100%;
             background: #fff;
-            border-top-right-radius: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            border-color:white;
+            margin-right:-330px !important;
         }
 
             .wrapper .top_navbar .top_menu .logo {
@@ -61,6 +66,7 @@
                 font-size: 30px;
                 font-weight: 900;
                 letter-spacing: 2px;
+                cursor:pointer;
             }
 
                 .wrapper .top_navbar .top_menu .logo:hover {
@@ -80,7 +86,7 @@
                     text-align: center;
                     line-height: 35px;
                     border-radius: 50%;
-                    color: #d93025;
+                    color: #d93025;;
                 }
 
                     .wrapper .top_navbar .top_menu ul li a:hover {
@@ -94,20 +100,20 @@
         left: 10px;
         background: white;
         width: 200px;
-        height: calc(100% - 70px);
-        border-bottom-left-radius: 20px;
+        height:100%;
         transition: all 0.3s ease;
+        box-shadow: rgba(0,0,0,0.4) 0 1px 2px;
+        margin-left:-9px;
     }
 
         .wrapper .sidebar-c ul li a {
             display: block;
             padding: 20px;
             position: relative;
-            margin-bottom: 1px;
+            margin:15px 0px;
             color: #202124;
             white-space: nowrap;
         }
-
             .wrapper .sidebar-c ul li a:before {
                 content: "";
                 position: absolute;
@@ -116,7 +122,7 @@
                 width: 3px;
                 height: 100%;
                 background: #92a6e2;
-                display: none;
+                display: none
             }
 
             .wrapper .sidebar-c ul li a span.s-icon {
@@ -141,9 +147,10 @@
                 }
 
     .wrapper .main_container {
-        width: calc(100% - 200px);
-        margin-top: 70px;
-        margin-left: 200px;
+        width: calc(100% - 181px);
+        margin-top: 60px;
+        margin-left: 191px;
+        margin-bottom:-9px;
         padding: 15px;
         transition: all 0.3s ease;
         background: rgba(242,245,245,0.8);
@@ -168,7 +175,7 @@
 } */
 
     .wrapper.collapse-c .sidebar-c {
-        width: 70px;
+        width: 65px;
     }
 
         .wrapper.collapse-c .sidebar-c ul li a {
@@ -184,8 +191,8 @@
             }
 
     .wrapper.collapse-c .main_container {
-        width: calc(100% - 70px);
-        margin-left: 70px;
+        width: calc(100% - 46px);
+        margin-left: 56px;
     }
 
         .wrapper.collapse-c .main_container .btnPanel {
@@ -200,9 +207,9 @@
     top: 60px;
     left: 210px;
     display: block;
-    width: calc(100% - 200px);
+    width: calc(100% - 181px);
     height: 38px;
-    background-color: white;
+    background-color: #f5f7f7;
 }
 
 .mainSection {
@@ -231,7 +238,6 @@
         z-index: 1;
         border-radius: 8px;
         width:880%;
-        height:680%;
     }
 
     
@@ -259,16 +265,17 @@
 
             }
         .wrapper .top_navbar .top_menu ul .dropdown .dropdown-content .dropdown-item .profileLink {
-            border-radius: 100px;
-            background-color: white;
-            margin: 20px 5%;
-            border-color: #dadce0;
+            border-radius: 100px !important;
+            color: black !important;
+            background-color: white !important;
+            margin: 20px 5% !important;
+            border-color: #dadce0 !important;
             font: 550 17px/22px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif !important;
-            padding: 8px 16px;
-            box-shadow:rgba(0,0,0,0.4) 0px 2px 3px;
+            padding: 8px 16px !important;
+            box-shadow:rgba(0,0,0,0.4) 0px 2px 3px !important;
         }
             .wrapper .top_navbar .top_menu ul .dropdown .dropdown-content .dropdown-item .profileLink:hover {
-                background-color: #f7f8f8;
+                background-color: #f7f8f8 !important;
             }
         .wrapper .top_navbar .top_menu ul .dropdown .dropdown-content .dropdown-item .logout {
             -webkit-border-radius: 4px;
@@ -284,7 +291,7 @@
             height: 40px !important;
             width: 150px !important;
             box-shadow: rgba(0,0,0,0.4) 0px 2px 3px;
-            margin: 4% -5%;
+            margin: 4.5% -5%;
         }
 
             .wrapper .top_navbar .top_menu ul .dropdown .dropdown-content .dropdown-item .logout:hover {
