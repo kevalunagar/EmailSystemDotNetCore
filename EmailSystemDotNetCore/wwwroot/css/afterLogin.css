@@ -21,8 +21,9 @@
         position: fixed;
         top: 0px;
         z-index: 1;
-        box-shadow:rgba(0,0,0,0.4) 0 1px 2px ;
+        box-shadow:rgba(0,0,0,0.4) 3px 0px 10px 3px;
         margin-left:-9px;
+        border-radius:3px;
     }
 
         .wrapper .top_navbar .hamburger {
@@ -36,8 +37,8 @@
         }
 
             .wrapper .top_navbar .hamburger:hover {
-                border-radius: 45px;
-                background: rgba(242,245,245,0.5);
+                border-radius: 25px;
+                background: rgba(245,245,245,1);
             }
 
             .wrapper .top_navbar .hamburger div {
@@ -62,15 +63,15 @@
         }
 
             .wrapper .top_navbar .top_menu .logo {
-                color: rgb(255, 39, 1);
+                color: rgb(224, 34, 0);
                 font-size: 30px;
                 font-weight: 900;
                 letter-spacing: 2px;
-                cursor:pointer;
+                cursor: pointer;
             }
 
                 .wrapper .top_navbar .top_menu .logo:hover {
-                    color: rgb(223, 35, 2);
+                    color: rgb(255, 39, 1) !important;
                 }
 
                 .wrapper .top_navbar .top_menu ul {
@@ -86,7 +87,7 @@
                     text-align: center;
                     line-height: 35px;
                     border-radius: 50%;
-                    color: #d93025;;
+                    color: #d93025;
                 }
 
                     .wrapper .top_navbar .top_menu ul li a:hover {
@@ -100,10 +101,11 @@
         left: 10px;
         background: white;
         width: 200px;
-        height:100%;
-        transition: all 0.3s ease;
-        box-shadow: rgba(0,0,0,0.4) 0 1px 2px;
-        margin-left:-9px;
+        height: 100%;
+        transition: all 0.5s ease;
+        box-shadow: rgba(0,0,0,0.4) 0px 2px 10px 2px;
+        border-radius:3px;
+        margin-left: -9px;
     }
 
         .wrapper .sidebar-c ul li a {
@@ -111,8 +113,10 @@
             padding: 20px;
             position: relative;
             margin:15px 0px;
-            color: #202124;
+            color: black !important;
             white-space: nowrap;
+            font-weight:600;
+            font-size:medium;
         }
             .wrapper .sidebar-c ul li a:before {
                 content: "";
@@ -128,6 +132,7 @@
             .wrapper .sidebar-c ul li a span.s-icon {
                 margin-right: 10px;
                 display: inline-block;
+                transition-delay:-5s;
             }
 
             .wrapper .sidebar-c ul li a span.s-title {
@@ -136,9 +141,11 @@
 
             .wrapper .sidebar-c ul li a:hover,
             .wrapper .sidebar-c ul li a.active-icon {
-                color: #d93025;
-                background: #fca7a1;
+                color: white !important;
+                transition-delay: -5s;
+                background-color: rgb(255, 39, 1);
                 border-radius: 25px;
+                box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.3);
             }
 
                 .wrapper .sidebar-c ul li a:hover:before,
@@ -152,7 +159,7 @@
         margin-left: 191px;
         margin-bottom:-9px;
         padding: 15px;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
         background: rgba(242,245,245,0.8);
         color: #202124;
     }
@@ -162,17 +169,12 @@
         }
 
         .wrapper .main_container .item {
-            /* background: #fff; */
             margin-bottom: 10px;
             padding: 5px;
             font-size: 14px;
             line-height: 22px;
             cursor: pointer;
         }
-
-    /* .wrapper .main_container .item:hover{
-    box-shadow: 2px 3px #202124;
-} */
 
     .wrapper.collapse-c .sidebar-c {
         width: 65px;
@@ -210,6 +212,7 @@
     width: calc(100% - 181px);
     height: 38px;
     background-color: #f5f7f7;
+    transition: all 0.5s ease;
 }
 
 .mainSection {

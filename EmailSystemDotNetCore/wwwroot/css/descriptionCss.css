@@ -56,12 +56,12 @@
         color: darkgray;
     }
 
-a {
-    color:gray !important;
+.fas {
+    color:gray;
 }
 
-a:hover {
-    color:darkgray !important;
+.fas:hover {
+    color:darkgray;
 }
 
 .btn:hover {
