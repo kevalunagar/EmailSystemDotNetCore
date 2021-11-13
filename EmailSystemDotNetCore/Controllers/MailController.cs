@@ -46,7 +46,7 @@ namespace EmailSystemDotNetCore.Controllers
         public IActionResult starredBtnClick(string id)
         {
             mailRepository.starredMail(id);
-            return RedirectToAction("Inbox", "Mail");
+            return RedirectToAction("Starred", "Mail");
         }
         public IActionResult deleteBtnClick(string id)
         {
@@ -210,6 +210,10 @@ namespace EmailSystemDotNetCore.Controllers
                     uniqueFileName= Guid.NewGuid().ToString() + "_" + model.ImageFile.FileName;
                     string filePath= Path.Combine(uploadsFolder, uniqueFileName);
                     model.ImageFile.CopyTo(new FileStream(filePath,FileMode.Create));
+                }
+                else
+                {
+                    uniqueFileName = user.ImagePath;
                 }
                 user.FirstName = model.FirstName;
                 user.LastName = model.LastName;
