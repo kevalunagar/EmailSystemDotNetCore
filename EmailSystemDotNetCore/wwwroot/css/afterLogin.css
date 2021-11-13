@@ -213,6 +213,7 @@
     height: 38px;
     background-color: #f5f7f7;
     transition: all 0.5s ease;
+    margin:5px 10px !important;
 }
 
 .mainSection {

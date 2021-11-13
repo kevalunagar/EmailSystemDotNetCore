@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/inbox.css" />
 }
 <div class="btnPanel">
-    <a asp-action="Inbox"><i class="fas fa-redo"></i></a>
+    <a asp-action="Inbox"><i class="fas fa-redo  small-btn"></i></a>
 </div>
 
 <div class="mainSection">
@@ -39,12 +39,12 @@
                     </td>
                     <td class="delete">
                         <a asp-route-id=@mail.Id asp-action="deleteBtnClick">
-                            <i class="fa fa-trash fa-lg"></i>
+                            <i class="fa fa-trash fa-lg small-btn"></i>
                         </a>
                     </td>
                     <td class="read">
                         <a asp-route-id=@mail.Id asp-action="markAsReadClick">
-                            <i class="@(mail.MarkAsRead?"fa fa-envelope fa-lg":"fa fa-envelope-open fa-lg")"></i>
+                            <i class="@(mail.MarkAsRead?"fa fa-envelope fa-lg":"fa fa-envelope-open fa-lg") small-btn"></i>
                         </a>
                     </td>
                 </tr>

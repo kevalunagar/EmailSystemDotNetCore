@@ -15,6 +15,7 @@ td {
 tr {
     display: block;
     padding:0% 2%;
+    font-size:medium;
 }
 
     tr:hover {
@@ -24,12 +25,12 @@ tr {
         border-radius: 25px;
     }
 
-a {
-    color: grey;
+.small-btn {
+    color: gray;
 }
 
-    a:hover {
-        color: darkgrey;
+    .small-btn:hover {
+        color: darkgray;
     }
 
 .starMail {
@@ -67,4 +68,8 @@ a {
 .beforeReadMail {
     width: 3%;
     color:gray;
+}
+
+h4 {
+    margin:2% 8%;
 }
