@@ -1,0 +1,75 @@
+﻿body, td, input, textarea, select {
+    margin: 0;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+}
+
+table {
+    box-sizing: border-box;
+}
+
+td {
+    text-align: left;
+    /*width:10%;*/
+}
+
+tr {
+    display: block;
+    padding:0% 2%;
+    font-size:medium;
+}
+
+    tr:hover {
+        box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.3);
+        cursor: pointer;
+        background-color: white;
+        border-radius: 25px;
+    }
+
+.small-btn {
+    color: gray;
+}
+
+    .small-btn:hover {
+        color: darkgray;
+    }
+
+.starMail {
+    color: gold;
+}
+
+    .starMail:hover {
+        color: goldenrod;
+    }
+
+.star {
+    width: 5%;
+}
+
+.date {
+    width: 30%;
+}
+
+.subject {
+    width: 50%;
+}
+
+.delete {
+    width: 5%;
+}
+
+.read {
+    width: 5%;
+}
+
+.nameMail {
+    width: 20%;
+}
+
+.beforeReadMail {
+    width: 3%;
+    color:gray;
+}
+
+h4 {
+    margin:2% 8%;
+}

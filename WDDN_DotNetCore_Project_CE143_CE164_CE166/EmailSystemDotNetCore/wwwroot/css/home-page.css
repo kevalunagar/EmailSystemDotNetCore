@@ -1,0 +1,102 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+body {
+    background-color: rgba(231, 231, 231, 1) !important;
+}
+
+* {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    box-shadow: rgba(0,0,0,0.4) 3px 0px 10px 3px;
+    margin-bottom:4%;
+    border-radius:3px;
+}
+
+.navbar .navbar-brand {
+    font-size: 30px !important;
+    font-weight: 900 !important;
+    color: rgb(224, 34, 0) !important;
+    letter-spacing: 2px !important;
+}
+
+.nav-custom{
+    background: white;
+    height:80px !important;
+    padding:1% !important;
+}
+
+.custom-shadow{
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.btn {
+    margin-left: 15px;
+}
+
+.logo-img {
+    width: 72px !important;
+    height: 48px !important;
+    margin-right: 15px !important;
+}
+
+.container .row .first {
+    margin: auto;
+    padding: 25px;
+    text-align: left;
+}
+
+.row {
+    margin-top: -2% !important;
+    margin-right: 9% !important;
+    margin-left: -3% !important;
+}
+
+.container .row .col-lg-6 h1{
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.container .row .col-lg-6 h4{
+    font-weight: 400;
+    color: #56565a;
+    line-height: 2rem;
+    margin-bottom: 30px;
+}
+
+.container .row .col-lg-6 .pro-img{
+    width: 125%;
+    height: 90%;
+    margin: 25px 10px;
+}
+
+.container .row .col-lg-6 .btn{
+    text-align: left;
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+#footer {
+    margin-top:37px;
+    text-align: center;
+    padding: 0.5% 5%;
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.4) 3px 0px 10px 3px;
+    border-radius:3px;
+}
+
+.social {
+    margin: 20px 10px 0px;
+} 
+
+i {
+    cursor:pointer !important;
+}

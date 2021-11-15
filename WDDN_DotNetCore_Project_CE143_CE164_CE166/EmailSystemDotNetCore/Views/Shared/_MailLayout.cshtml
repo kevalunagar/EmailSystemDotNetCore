@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="/Images/logo.ico" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/css/afterLogin.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    @if (IsSectionDefined("Styles"))
+    {
+        RenderSection("Styles", required: false);
+    }
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top_navbar">
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="top_menu">
+                <a href="/" class="logo">Email System</a>
+                <ul>
+                    <div class="dropdown">
+                        <img src=@("/Images/"+ViewData["imagePath"]) class="dropbtn rounded-circle">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <img src=@("/Images/"+ViewData["imagePath"]) class="navProfileImg rounded-circle" />
+                            </div>
+                            <div class="dropdown-item">
+                                <p class="fullName">@ViewData["FullName"]</p>
+                            </div>
+                            <div class="dropdown-item">
+                                <p class="email">@ViewData["email"]</p>
+                            </div>
+
+                            <div class="dropdown-item">
+                                <a asp-action="Profile" class="profileLink btn btn-light"> Manage your Account</a>
+                            </div>
+                            <hr />
+
+                            <div class="dropdown-item">
+                                <a asp-controller="Account" class="logout btn" asp-action="Logout">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar-c">
+            <ul>
+                <li>
+                    <a id="compose" asp-action="Compose">
+                        <span class="s-icon"><i class="fas fa-edit"></i></span>
+                        <span class="s-title">Compose</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a id="inbox" asp-action="Inbox">
+                        <span class="s-icon"><i class="fas fa-inbox"></i></span>
+                        <span class="s-title">Inbox</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="starred" asp-action="Starred">
+                        <span class="s-icon"><i class="fas fa-star"></i></span>
+                        <span class="s-title">Starred</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="sent" asp-action="SentMails">
+                        <span class="s-icon"><i class="fas fa-share-square"></i></span>
+                        <span class="s-title">Sent</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main_container">
+            @RenderBody()
+        </div>
+        <script src="/lib/jquery/jquery.js"></script>
+
+        <script type="text/javascript" src="/js/afterLogin.js"></script>
+        @if (IsSectionDefined("Scripts"))
+        {
+            @RenderSection("Scripts", required: false);
+        }
+</body>
+</html>

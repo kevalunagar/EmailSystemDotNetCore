@@ -1,0 +1,85 @@
+﻿@model MailDetailsViewModel
+@{ 
+    ViewBag.Title = Model.mail.Subject;
+}
+@section Styles{
+    <link rel="stylesheet" href="/css/details.css" />
+}
+
+<div class="btnPanel">
+    <a asp-action="Inbox"> <i class="fas fa-lg fa-arrow-left small-btn"></i></a>
+</div>
+
+<div class="mainSection">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                @Model.mail.Subject
+            </div>
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2">
+                        <img src=@("/Images/"+Model.mail.SenderUserModel.ImagePath) class="mail-photo" />
+                    </td>
+                    <td class="auto-style3">
+                        &nbsp;<label>@(Model.mail.SenderUserModel.FirstName+" "+Model.mail.SenderUserModel.LastName)</label>
+                        &lt;<label>@Model.mail.SenderUserModel.Email</label>&gt;
+
+                    </td>
+                    <td class="auto-style4">
+                        <label>@Model.mail.Date.ToString("MMM dd, yyyy h:m tt")</label>
+                    </td>
+                    <td class="auto-style5">
+                        <a asp-action="compose" asp-route-id=@Model.mail.Id asp-route-btn="reply"><i class='fas fa-reply fa-lg small-btn'></i></a>
+                    </td>
+                    <td>
+                        <a asp-action="compose" asp-route-id=@Model.mail.Id asp-route-btn="forward"><i class='fas fa-arrow-right fa-lg small-btn'></i></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-text">
+            <div class="desc">
+                @Html.Raw(Model.mail.Description)
+            </div>
+            <a asp-action="compose" asp-route-id=@Model.mail.Id asp-route-btn="reply" class="btn btn-outline-secondary"><i class="fas fa-lg fa-reply"></i>&nbsp;&nbsp;Reply</a>
+            <a asp-action="compose" asp-route-id=@Model.mail.Id asp-route-btn="forward" class="btn btn-outline-secondary"><i class="fas fa-lg fa-arrow-right"></i>&nbsp;&nbsp;Forward</a>
+        </div>
+    </div>
+
+
+
+    @if (Model.replyMails.Count() != 0)
+    {
+        //Reply mails
+        @foreach (var replymail in Model.replyMails)
+        {
+            <div class="card">
+                <div class="card-body">
+                    <table class="auto-style1">
+                        <tr>
+                            <td class="auto-style2">
+                                <image class="mail-photo" src="@("/Images/" + replymail.SenderUserModel.ImagePath )" />
+                            </td>
+                            <td class="auto-style3">
+                                &nbsp;<b>@(replymail.SenderUserModel.FirstName + " " + replymail.SenderUserModel.LastName)</b>
+                                &lt;@replymail.SenderUserModel.Email&gt;
+
+                            </td>
+                            <td class="auto-style4">@replymail.Date.ToString("MMM dd, yyyy h:m tt")</td>
+                            <td class="auto-style5"><a asp-action="compose" asp-route-id=@replymail.Id asp-route-btn="reply"><i class="fas fa-reply fa-lg small-btn"></i></a></td>
+                            <td><a asp-action="compose" asp-route-id=@replymail.Id asp-route-btn="forward"><i class="fas fa-arrow-right fa-lg small-btn"></i></a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-text">
+                    <div class="desc">
+                        @Html.Raw(@replymail.Description)
+                    </div>
+                    <a asp-action="compose" asp-route-id=@replymail.Id asp-route-btn="reply" class="btn btn-outline-secondary"><i class="fas fa-lg fa-reply"></i>&nbsp;&nbsp;Reply</a>
+                    <a asp-action="compose" asp-route-id=@replymail.Id asp-route-btn="forward" class="btn btn-outline-secondary"><i class="fas fa-lg fa-arrow-right"></i>&nbsp;&nbsp;Forward</a>
+                </div>
+            </div>
+            }
+        }
+    </div>

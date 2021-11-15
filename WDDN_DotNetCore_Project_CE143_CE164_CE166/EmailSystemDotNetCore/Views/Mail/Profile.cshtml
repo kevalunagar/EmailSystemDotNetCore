@@ -1,0 +1,32 @@
+﻿@model UserViewModel
+@{
+    ViewBag.Title = "profile of User";
+}
+@section Styles{
+    <link rel="stylesheet" href="/css/profile.css" />
+}
+<form enctype="multipart/form-data" method="post">
+    <div class="card">
+        <img src="@("/Images/"+Model.imagePath)" class="rounded-circle card-img-top user-image" alt="User Profile Image" />
+        <div class="card-body">
+            <h3 class="card-title">
+                Update your Profile
+            </h3>
+            <p class="card-text">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" placeholder="Enter Firstname" />
+                <span asp-validation-for="FirstName" class="errMsg"></span>
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" placeholder="Enter Lastname" />
+                <span asp-validation-for="LastName" class="errMsg"></span>
+                <label asp-for="DateOfBirth"></label>
+                <input asp-for="DateOfBirth" />
+                <label asp-for="ImageFile" class="img"></label>
+                <input asp-for="ImageFile" class="form-control" />
+            </p>
+            <br />
+            <button type="submit" class="btn btn-success">Update</button> &nbsp;
+            <a href="/" class="btn btn-danger">Cancel</a>
+        </div>
+    </div>
+</form>
